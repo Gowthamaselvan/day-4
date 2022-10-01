@@ -1,0 +1,83 @@
+1)
+var obj1={
+name:"person 1",
+age: 5,
+};
+var obj2={
+    age: 5,
+    name: "person 1",
+};
+console.log(JSON.stringify(obj1)===JSON.stringify(obj2));
+
+2)//XHR:xml-http request
+//1st step :create a XHR object
+//this is needed to interact with  the servers via api
+//request:user defined variable
+//maintain the same name over all in the program
+var request=new XMLHttpRequest();
+
+//Step 02:initate a request
+//two parameters inside the method
+//HTTP method: GET
+//API URL
+//Both are under double quotes
+request.open("GET","https://restcountries.com/v2/all");
+
+
+//Step 03:sending the request
+//kickstaring 
+request.send();
+
+//Step 04: once the data successfully loaded from server
+//status code of server is 200
+//onload is a event which will be fired once the data
+//successfully loaded from server
+request.onload=function(){
+    //applying JSON.parse(Method)
+    //converting it into object
+    
+    
+    var res = JSON.parse(request.response);
+    for (var i = 0; i < res.length; i++) {
+        console.log("country name:" + res[i].name,"captial name:" + res[i].capital);
+
+    }
+}
+    //write the code here 
+
+3)//XHR:xml-http request
+//1st step :create a XHR object
+//this is needed to interact with  the servers via api
+//request:user defined variable
+//maintain the same name over all in the program
+var request=new XMLHttpRequest();
+
+//Step 02:initate a request
+//two parameters inside the method
+//HTTP method: GET
+//API URL
+//Both are under double quotes
+request.open("GET","https://restcountries.com/v2/all");
+
+
+//Step 03:sending the request
+//kickstaring 
+request.send();
+
+//Step 04: once the data successfully loaded from server
+//status code of server is 200
+//onload is a event which will be fired once the data
+//successfully loaded from server
+request.onload=function(){
+    //applying JSON.parse(Method)
+    //converting it into object
+    
+    
+    var res = JSON.parse(request.response);
+    for (var i = 0; i < res.length; i++) {
+        console.log("flags:" + res[i].name,);
+
+    }
+}
+    //write the code here 
+
